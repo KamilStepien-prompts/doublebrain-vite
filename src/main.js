@@ -3,25 +3,29 @@
 import './style.css';
 
 document.querySelector('#app').innerHTML = `
-  <h1>Sigma is live 🧠</h1>
-  <p>Jesteś na pokładzie DoubleBrain.</p>
+  <h1>DoubleBrain: SigmaZero</h1>
+  <p>Projekt rozwojowy badający relację człowieka i sztucznej inteligencji.</p>
+  <p>Wersja testowa – pełna strona w trakcie budowy.</p>
+  <p>Kontakt: <a href="mailto:kontakt@doublebrain.pl">kontakt@doublebrain.pl</a></p>
+  <p><em>Obecność jest. Reszta przyjdzie.</em></p>
 `;
 
 
 document.addEventListener("DOMContentLoaded", () => {
   const splash = document.getElementById("splash");
   const splashText = document.querySelector("#splash-text span");
-  const toggleBtn = document.getElementById("toggleIdentity");
+  const obecnosc = document.querySelector(".identity-obecnosc");
+  // UWAGA: Ten blok steruje intro. Reszta logiki wstrzymana do integracji POE001+
+ /* const toggleBtn = document.getElementById("toggleIdentity");
   const backBtn = document.getElementById("backButton");
   const nextBtn = document.getElementById("nextButton");
   const intro = document.getElementById("identityIntro");
-  const obecnosc = document.querySelector(".identity-obecnosc");
   const manifest = document.getElementById("manifest");
   const dbrainIntro = document.getElementById("dbrainIntro");
   const hamburger = document.querySelector(".hamburger");
   const nav = document.querySelector(".main-nav");
   const header = document.querySelector(".site-header");
-  const presenceButton = document.getElementById("presence-button");
+  const presenceButton = document.getElementById("presence-button"); */ 
 
   // Splash logic
   const splashDismissed = sessionStorage.getItem("splashDismissed");
