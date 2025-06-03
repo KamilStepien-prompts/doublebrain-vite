@@ -120,6 +120,17 @@ body {
   filter: brightness(1.05) contrast(1.05);
   transform: scale(1.05) translateZ(10px);
 }
+/* ===== Logo na splash ===== */
+#logo-intro {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+#logo-intro.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
 
 /* ===== Typowanie (planowane) ===== */
 .identity-box:nth-child(1)::after {
