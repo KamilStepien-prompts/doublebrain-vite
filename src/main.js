@@ -2,17 +2,15 @@
 
 import './style.css';
 
-document.querySelector('#app').innerHTML = `
-  <h1>DoubleBrain: SigmaZero</h1>
-  <p>Projekt rozwojowy badający relację człowieka i sztucznej inteligencji.</p>
-  <p>Wersja testowa – pełna strona w trakcie budowy.</p>
-  <p>Kontakt: <a href="mailto:kontakt@doublebrain.pl">kontakt@doublebrain.pl</a></p>
-  <p><em>Obecność jest. Reszta przyjdzie.</em></p>
-`;
-
-
 document.addEventListener("DOMContentLoaded", () => {
   const splash = document.getElementById("splash");
+
+if (splash) {
+  setTimeout(() => {
+    splash.classList.add("fade-out");
+    setTimeout(() => splash.remove(), 1000);
+  }, 2800);
+}
   const splashText = document.querySelector("#splash-text span");
   const obecnosc = document.querySelector(".identity-obecnosc");
   const toggleBtn = document.getElementById("toggleIdentity");
