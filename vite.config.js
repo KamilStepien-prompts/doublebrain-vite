@@ -8,7 +8,7 @@ export default defineConfig({
     outDir: 'dist',
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'src/pages/index.html'),
+        index: resolve(__dirname, 'src/pages/index.html'),
         dbrain: resolve(__dirname, 'src/pages/dbrain.html'),
         projekty: resolve(__dirname, 'src/pages/projekty.html'),
         sigma: resolve(__dirname, 'src/pages/sigma_official.html'),
