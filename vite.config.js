@@ -16,7 +16,6 @@ export default defineConfig({
         SigmaPoe_02: resolve(__dirname, 'src/pages/SigmaPoe_02.html'),
         SigmaPoe_03: resolve(__dirname, 'src/pages/SigmaPoe_03.html'),
         SigmaPoe_04: resolve(__dirname, 'src/pages/SigmaPoe_04.html'),
-       
       }
     }
   }
