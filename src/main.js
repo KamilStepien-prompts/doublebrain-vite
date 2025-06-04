@@ -4,12 +4,20 @@ import './style.css';
 
 document.addEventListener("DOMContentLoaded", () => {
   const splash = document.getElementById("splash");
+  const splashText = document.querySelector("#splash-text span");
+  const logo = document.getElementById("logo-intro");
+  const splashDismissed = sessionStorage.getItem("splashDismissed");
 
-if (splash) {
+ // Auto-fade splash if not dismissed before
+ if (!splashDismissed && splash) {
   setTimeout(() => {
     splash.classList.add("fade-out");
-    setTimeout(() => splash.remove(), 1000);
-  }, 2800);
+    logo?.classList.add("visible");
+    setTimeout(() => {
+      splash.remove();
+      sessionStorage.setItem("splashDismissed", "true");
+    }, 1500); // Fade duration
+  }, 5000); // Splash delay
 }
   const splashText = document.querySelector("#splash-text span");
   const obecnosc = document.querySelector(".identity-obecnosc");
@@ -24,25 +32,18 @@ if (splash) {
   const header = document.querySelector(".site-header");
   const presenceButton = document.getElementById("presence-button");
 
-  // Splash logic
-  const splashDismissed = sessionStorage.getItem("splashDismissed");
-  if (!splashDismissed && splash) {
-    setTimeout(() => splash.classList.add("hide"), 2800);
-    sessionStorage.setItem("splashDismissed", "true");
+// Allow user to dismiss splash early by click
+if (splash && splashText) {
+  splashText.style.cursor = "pointer";
+  splashText.addEventListener("click", () => {
+    splash.classList.add("fade-out");
+    logo?.classList.add("visible");
     setTimeout(() => {
-      splash.classList.add("hide");
-      document.getElementById("logo-intro")?.classList.add("visible");
-    }, 2800);
-  }
-
-  if (splash && splashText) {
-    splashText.style.cursor = "pointer";
-    splashText.addEventListener("click", () => {
-      splash.style.opacity = "0";
-      document.getElementById("logo-intro")?.classList.add("visible");
-      setTimeout(() => (splash.style.display = "none"), 1000);
-    });
-  }
+      splash.remove();
+      sessionStorage.setItem("splashDismissed", "true");
+    }, 1500);
+  });
+}
 
   // Hamburger toggle
   if (hamburger && nav) {
